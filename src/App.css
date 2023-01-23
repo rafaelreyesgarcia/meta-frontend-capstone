@@ -143,14 +143,19 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #dddedd;
-  width: 250px;
+  width: 270px;
+  height: 500px;
   border-radius: 5%;
 }
 
-.product-card__heading {
+.product__description--heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.product__description--text {
+  height: 10rem;
 }
 
 .product__img {
@@ -163,6 +168,13 @@ main {
 
 .product__description {
   padding-inline: 1rem;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.product__order {
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* FOOTER */

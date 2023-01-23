@@ -1,3 +1,5 @@
+import MopedIcon from '@mui/icons-material/Moped';
+
 export default function WeeklySpecials() {
   const products = [
     {
@@ -34,16 +36,16 @@ export default function WeeklySpecials() {
               alt={product.name} className='product__img'
             />
             <div className="product__description">
-              <div className="product-card__heading">
+              <div className="product__description--heading">
                 <h3>{product.name}</h3>
-                <span className="highlight">${product.price}</span>
+                <span className="highlight">${parseFloat(product.price).toFixed(2)}</span>
               </div>
-              <p>
+              <p className='product__description--text'>
                 {product.description}
               </p>
-              <div>
+              <div className='product__order'>
                 <span><b>Order a Delivery</b></span>
-                <i></i>
+                <MopedIcon />
               </div>
             </div>
           </div>
