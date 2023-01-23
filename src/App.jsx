@@ -11,7 +11,7 @@ function App() {
       <Header>
         <Navigation />
       </Header>
-      <Main></Main>
+      <Main />
       <Footer />
     </>
   )

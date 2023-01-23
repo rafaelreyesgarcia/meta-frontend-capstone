@@ -9,9 +9,16 @@ export default function Navigation() {
   ]
   return (
     <nav>
-      <ul>
+      <ul className="flex-container">
         {navigation.map((link) => (
-          <li key={link}>{link}</li>
+          <li
+            key={link}
+            id={link}
+          >
+            <a href='/'>
+              {link}
+            </a>
+          </li>
         ))}
       </ul>
     </nav>
