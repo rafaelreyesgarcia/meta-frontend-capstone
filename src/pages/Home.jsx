@@ -1,5 +1,5 @@
-import Hero from "./Hero"
-import WeeklySpecials from "./WeeklySpecials"
+import Hero from "../components/Hero"
+import WeeklySpecials from "../components/WeeklySpecials"
 
 export default function Main() {
   return (

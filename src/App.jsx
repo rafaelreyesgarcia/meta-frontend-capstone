@@ -1,8 +1,14 @@
 import './App.css'
-import Header from './assets/components/Header'
-import Navigation from './assets/components/Navigation'
-import Main from './assets/components/Main'
-import Footer from './assets/components/Footer'
+import Header from './components/Header'
+import Navigation from './components/Navigation'
+import Home from './pages/Home'
+import Footer from './components/Footer'
+import About from './pages/About'
+import Menu from './pages/Menu'
+import Reservations from './pages/Reservations'
+import OrderOnline from './pages/OrderOnline'
+import Login from './pages/Login'
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
 
@@ -11,7 +17,32 @@ function App() {
       <Header>
         <Navigation />
       </Header>
-      <Main />
+      <Routes>
+        <Route
+          path='/'
+          element={<Home />}
+        />
+        <Route
+          path='/about'
+          element={<About />}
+        />
+        <Route
+          path='/menu'
+          element={<Menu />}
+        />
+        <Route
+          path='/reservations'
+          element={<Reservations />}
+        />
+        <Route
+          path='/online-order'
+          element={<OrderOnline />}
+        />
+        <Route
+          path='/login'
+          element={<Login />}
+        />
+      </Routes>
       <Footer />
     </>
   )
