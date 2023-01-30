@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function ReservationForm({ timeSlots, availableTimes, dispatch, occasions }) {
+export default function ReservationForm({
+  timeSlots,
+  availableTimes,
+  dispatch,
+  occasions
+}) {
   const today = new Date();
   const formattedToday = today.toISOString().split('T')[0];
 
@@ -12,13 +17,32 @@ export default function ReservationForm({ timeSlots, availableTimes, dispatch, o
     setDate(e.target.value);
   }
 
-  console.log(date);
-  console.log(availableTimes);
-  console.log(guests);
-  console.log(occasion);
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setDate(formattedToday);
+    setGuests(1);
+    setOccasion(occasions[0]);
+    dispatch({
+      type: 'submitted'
+    });
+
+    console.log('submitted!');
+  }
+
+  useEffect(() => {
+    console.log(date);
+    console.log(availableTimes);
+    console.log(guests);
+    console.log(occasion);
+  })
 
   return (
-    <form className="form">
+    <form
+      className="form"
+      aria-label='reserve a table'
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="res-date">Choose Date</label>
       <input
       type="date"
@@ -51,6 +75,7 @@ export default function ReservationForm({ timeSlots, availableTimes, dispatch, o
         min="1"
         max="10"
         id="guests"
+        value={guests}
         onChange={(e) => setGuests(e.target.value)}
       />
       <label htmlFor="occasion">Occasion</label>
@@ -58,8 +83,14 @@ export default function ReservationForm({ timeSlots, availableTimes, dispatch, o
         id="occasion"
         onChange={(e) => setOccasion(e.target.value)}
       >
-        <option>Birthday</option>
-        <option>Anniversary</option>
+        {occasions.map((occasion) => {
+          if (occasion === 'Birthday') {
+            return <option selected>{occasion}</option>
+          }
+          return (
+            <option>{occasion}</option>
+          )
+        })}
       </select>
       <input type="submit" value="make your reservation" />
     </form>

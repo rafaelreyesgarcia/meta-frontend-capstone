@@ -20,6 +20,9 @@ function updateTimes(availableTimes, action) {
   if (action.type === 'selected_time') {
     return action.selectedTime;
   }
+  if (action.type === 'submitted') {
+    return timeSlots;
+  }
 }
 
 

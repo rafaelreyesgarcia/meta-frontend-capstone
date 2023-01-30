@@ -10,7 +10,7 @@ export default function Navigation() {
     'login'
   ]
   return (
-    <nav>
+    <nav role='navigation' aria-label='main'>
       <ul className="flex-container">
         {navigation.map((link) => {
           if (link === 'home') {
