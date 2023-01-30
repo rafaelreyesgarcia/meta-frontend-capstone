@@ -178,6 +178,22 @@ main {
   justify-content: space-between;
 }
 
+/* RESERVATIONS */
+
+.reservations {
+  grid-area: main;
+  display: grid;
+  place-items: center;
+}
+
+/* RESERVATION FORM */
+
+.form {
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+}
+
 /* FOOTER */
 
 footer {
